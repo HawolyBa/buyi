@@ -1,0 +1,21 @@
+.product-list {
+  @include flex(space-between, row wrap, center);
+
+  .product {
+    margin-bottom: 30px;
+    flex: 1;
+    margin-right: 30px;
+    &:nth-child(3n) {
+      margin-right: 0
+    }
+    img {
+      width: 100%;
+      min-width: 300px;
+      height: 300px
+    }
+    figcaption {
+      @include flex(space-between, row nowrap, center);
+      h5 { color: $green }
+    }
+  }
+}

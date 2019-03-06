@@ -1,0 +1,29 @@
+.home {
+  section.hero {
+    width: 100%;
+    height: 70vh;
+    background-color: black;
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: relative;
+
+    .featured-product {
+      text-align: center;
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      transform: translate(-50%);
+      text-transform: uppercase;
+      h2 {
+        font-size: 3.5rem;
+        color: black
+      }
+      h3 {
+        font-size: 2rem;
+        color: $green
+      }
+    }
+  }
+}
