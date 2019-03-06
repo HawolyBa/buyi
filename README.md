@@ -1,68 +1,167 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **BUYI PROJECT**
 
-## Available Scripts
+## Project composition
+  - Frontend: React
+  - Backend: Firebase
+  - Payment: Stripe
+  - Deployment: Netlify
 
-In the project directory, you can run:
+## User stories
+- User can add a product to cart
+- User can delete a product from cart
+- User can change quantity of product in cart
+- User can order one or many products
+- User can login and register
+- User can see all its previous orders
+- User can add product if admin
+- User can delete product of admin
+- User can edit product if admin
+- User can filter products 
+- User can sort products by date, by name, by price
 
-### `npm start`
+## Frontent
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Routes:
+ - Home: '/'
+ - SingleProduct: '/product/:id'
+ - Category: '/category/:catid'
+ - Cart: '/cart'
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Components:
 
-### `npm test`
+- **Layout**:
+    - Header
+        - Navbar
+    - Footer
+        - Column List
+        - Newsletter
+- **Home**: 
+    - Hero section
+- **SingleProduct**:
+    - Showcase
+    - AddToCart
+    - Description
+    - Gallery
+    - Similar
+        - SimilarItem
+- **Category**:
+    - Filter
+        - PriceFilter
+        - SizeFilter
+        - ColorFilter
+    - SortList
+- **Cart**
+    - CartTable
+    - CartRow
+- **AddProduct**:
+    - UploadImage
+    - AddForm
+-**AdminProducts**
+    - ProductTable
+    - AdminProduct
+- **Login/Register**
+- **Shared**:
+    - ProductList
+        - Product
+    - CallToAction
+    - Heading
+    - Modal
+    - FloatingButton
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Redux
 
-### `npm run build`
+**Actions**: 
+- getProducts
+- addproduct
+- editProduct
+- deleteProduct
+- registerUser
+- loginUser
+- getUserOrders
+- getCategories
+- getProductsFromCategories
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Functionalities
+- Add to Cart
+- Delete from Cart
+- Filter products
+- Change quantity in cart
+- Number of products in cart
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Design
+SCSS stylesheet foreach components or styled components or each components has its own inline CSS ???
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend
+FIREBASE
+**Database**:
+- users
+    - email address: string
+    - firstname: string
+    - lastname: string
+    - billing address: string
+    - shipping address: string
+    - admin: boolean
+- products
+    - name: string
+    - thumbnail:string
+    - price: number
+    - description: string
+    - colors: array of name (string) and stock (number)
+    - sizes: array of dimensions (number) and stock (number)
+    - gallery: array of strings
+    - created_at: timestamp
+    - created_by: string
+- orders
+    - userId: string
+    - products: array of objects of productId (string) and total (number)
+    - total: number
+    - date: timestamp
 
-### `npm run eject`
+**Storage**:
+ - products
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Functions**
+- Make user an admin
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**DO NOT FORGET TO CHANGE FIREBASE RULES!!!**
+## Deployment
+Netlify
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## VIDEOS
+### VIDEO 1
+Introduction
+### VIDEO 2
+- Start sketching the website
+- Choose colors
+- Web design
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### VIDEO 3
+1. Create a folder called buyi in your pc
+1. init project and create a Github repository
+```javascript
+npm init 
+```
+2. Create a react app
+```javascript
+create-react-app buyi
+```
+3. Install all dependecies
+```javascript
+npm install bootstrap reactstrap react-router-dom react-redux-firebase redux-firestore redux redux-thunk react-redux firebase moment react-moment 
+```
+4. Clean up React project
+5. Setup the main structure of the app
+6. Add routing to App.js
 
-## Learn More
+### VIDEO 4
+Create shared components 
+- Header
+- Footer
+- Styling
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### VIDEO 5
+Create the homepage with dummy content
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
