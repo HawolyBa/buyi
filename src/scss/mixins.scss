@@ -1,0 +1,13 @@
+@mixin flex-spb($flow) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: $flow
+}
+
+@mixin flex($jc, $flow, $align) {
+  display: flex;
+  align-items: $align;
+  justify-content: $jc;
+  flex-flow: $flow
+}
